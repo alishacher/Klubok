@@ -6,6 +6,7 @@ npm-debug.log
 #Next
 .next/
 .env
+.vercel/
 
 #IDE
 .idea/
