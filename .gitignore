@@ -1,0 +1,11 @@
+#node
+node_modules/
+.DS_STORE
+npm-debug.log
+
+#Next
+.next/
+.env
+
+#IDE
+.idea/
