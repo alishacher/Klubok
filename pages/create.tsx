@@ -42,7 +42,7 @@ const Draft: React.FC = () => {
                         rows={8}
                         value={content}
                     />
-                    <button disabled={!content || !title} type="submit" value="Create" />
+                    <input disabled={!content || !title} type="submit" value="Create" />
                     <a className="back" href="#" onClick={() => Router.push('/')}>
                         Cancel
                     </a>
