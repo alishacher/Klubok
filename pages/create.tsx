@@ -44,7 +44,7 @@ const Draft: React.FC = () => {
                     />
                     <input disabled={!content || !title} type="submit" value="Create" />
                     <a className="back" href="#" onClick={() => Router.push('/')}>
-                        Cancel
+                        or Cancel
                     </a>
                 </form>
             </div>
@@ -78,7 +78,6 @@ const Draft: React.FC = () => {
       `}</style>
         </Layout>
     );
-
 };
 
 export default Draft;
