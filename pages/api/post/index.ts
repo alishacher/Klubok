@@ -6,14 +6,16 @@ export default async function handle(req, res) {
     authorEmail
     } = req.body;
 
-    // const session = await getSession({ });
+    const session = await getSession({ });
     // const authorEmail = session?.user?.email;
 
     const result = await prisma.post.create({
         data: {
             title: title,
+
             content: content,
-            author: (authorEmail)
+
+            author: { connect: { email: authorEmail } },
         },
     });
     res.json(result);
