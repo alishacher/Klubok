@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
-
 import { getSession } from 'next-auth/react';
 
 const Draft: React.FC = () => {
