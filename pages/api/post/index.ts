@@ -2,7 +2,9 @@ import { getSession } from 'next-auth/react';
 import prisma from '../../../lib/prisma';
 
 export default async function handle(req, res) {
-    const { title, content, authorEmail} = req.body;
+    const { title, content,
+    authorEmail
+    } = req.body;
 
     // const session = await getSession({ });
     // const authorEmail = session?.user?.email;
@@ -11,7 +13,7 @@ export default async function handle(req, res) {
         data: {
             title: title,
             content: content,
-            author: authorEmail,
+            author: (authorEmail)
         },
     });
     res.json(result);

@@ -14,7 +14,7 @@ const Draft: React.FC = () => {
         try {
             const session = await getSession({ });
             const authorEmail = session?.user?.email;
-            const body = { title, content, authorEmail };
+            const body = { title, content, author: authorEmail };
             await fetch('/api/post', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
