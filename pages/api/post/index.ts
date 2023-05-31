@@ -2,12 +2,10 @@ import { getSession } from 'next-auth/react';
 import prisma from '../../../lib/prisma';
 
 export default async function handle(req, res) {
-    const { title, content,
-    authorEmail
-    } = req.body;
+    const { title, content} = req.body;
 
     const session = await getSession({ });
-    // const authorEmail = session?.user?.email;
+    const authorEmail = session?.user?.email;
 
     const result = await prisma.post.create({
         data: {
