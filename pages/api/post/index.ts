@@ -3,7 +3,7 @@ import prisma from '../../../lib/prisma';
 
 export default async function handle(req, res) {
     const { title, content } = req.body;
-
+    console.log(req.body);
     const session = await getSession({ req });
     const result = await prisma.post.create({
         data: {
@@ -12,6 +12,5 @@ export default async function handle(req, res) {
             author: { connect: { email: session?.user?.email } },
         },
     });
-    console.log(session?.user?.email);
     res.json(result);
 }
