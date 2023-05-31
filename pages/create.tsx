@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
 
+import { getSession } from 'next-auth/react';
+
 const Draft: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -11,6 +13,8 @@ const Draft: React.FC = () => {
     const submitData = async (e: React.SyntheticEvent) => {
         e.preventDefault();
         try {
+            const session = await getSession({ });
+            console.log(session?.user?.email);
             const body = { title, content };
             await fetch('/api/post', {
                 method: 'POST',
