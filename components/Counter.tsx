@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {getSession} from "next-auth/react";
-import Router from "next/router";
 
 const Counter = (props) => {
     const {counterInit} = props;
@@ -22,10 +21,8 @@ const Counter = (props) => {
 
     const updateCounterData = async () => {
         try {
-            const session = await getSession({ });
-            const authorEmail = session?.user?.email;
             const body = { counter };
-            await fetch('/api/post', {
+            await fetch('/api/counter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
