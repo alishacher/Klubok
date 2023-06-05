@@ -11,7 +11,6 @@ export type PostProps = {
   } | null;
   content: string;
   published: boolean;
-  counter: number;
 };
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
@@ -21,7 +20,6 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
       <h2>{post.title}</h2>
       <small>By {authorName}</small>
       <ReactMarkdown children={post.content} />
-        <div>{post.counter}</div>
       <style jsx>{`
         div {
           color: inherit;
