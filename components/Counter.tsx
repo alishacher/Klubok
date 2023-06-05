@@ -21,6 +21,7 @@ const Counter = (props) => {
 
     const updateCounterData = async () => {
         try {
+            console.log(counter);
             const body = { counter };
             await fetch('/api/counter', {
                 method: 'POST',
