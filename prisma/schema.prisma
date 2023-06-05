@@ -19,6 +19,7 @@ model Post {
   published Boolean @default(false)
   author    User?@relation(fields:[authorId], references:[id])
   authorId  String?
+  counter   Int @default(0)
 }
 
 model Account {
