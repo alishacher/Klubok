@@ -6,6 +6,7 @@ import Layout from '../../components/Layout';
 import { PostProps } from '../../components/Post';
 import { useSession } from 'next-auth/react';
 import prisma from '../../lib/prisma';
+import Counter from "../../components/Counter";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
@@ -73,7 +74,8 @@ const Post: React.FC<PostProps> = (props) => {
           }
           {
             userHasValidSession && postBelongsToUser && (
-                <button onClick={() => addRow(props.id)}>Add</button>
+                // <button onClick={() => addRow(props.id)}>Add</button>
+                <Counter />
             )
           }
         </div>
