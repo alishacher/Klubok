@@ -38,12 +38,6 @@ async function deletePost(id: string): Promise<void> {
   await Router.push('/');
 }
 
-async function addRow(id:string): Promise<void> {
-  await await fetch(`/api/post/${id}`,{
-    // method: '',
-  });
-}
-
 const Post: React.FC<PostProps> = (props) => {
   const { data: session, status } = useSession();
   if (status === 'loading') {
@@ -74,8 +68,7 @@ const Post: React.FC<PostProps> = (props) => {
           }
           {
             userHasValidSession && postBelongsToUser && (
-                // <button onClick={() => addRow(props.id)}>Add</button>
-                <Counter counterInit={0} />
+                <Counter counterInit={props.counter} />
             )
           }
         </div>
