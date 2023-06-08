@@ -42,6 +42,7 @@ async function addCounter(id: string): Promise<void> {
   await fetch(`/api/post/${id}`, {
     method: 'PATCH',
   });
+  await Router.push('/api/post/${id}');
 }
 
 const Post: React.FC<PostProps> = (props) => {
@@ -67,19 +68,17 @@ const Post: React.FC<PostProps> = (props) => {
                 <button onClick={() => publishPost(props.id)}>Publish</button>
             )
           }
-          {
-            userHasValidSession && postBelongsToUser && (
+          {userHasValidSession && postBelongsToUser && (
                 <button onClick={() => deletePost(props.id)}>Delete</button>
             )
           }
-          {
-            userHasValidSession && postBelongsToUser && (
-                <Counter counterInit={props.counter} />
-            )
-          }
-          {
-            userHasValidSession && postBelongsToUser && (
-                <button onClick={() => addCounter(props.id)}> hi</button>
+          {userHasValidSession && postBelongsToUser && (
+                <div>
+                  <Counter counterInit={props.counter} />
+                  <button onClick={() => addCounter(props.id)}>+</button>
+                  <button onClick={() => addCounter(props.id)}>-</button>
+                  <button onClick={() => addCounter(props.id)}>Restart</button>
+                </div>
             )
           }
         </div>
