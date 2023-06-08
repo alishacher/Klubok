@@ -14,7 +14,7 @@ export type PostProps = {
   counter: number;
 };
 
-const Pattern: React.FC<{ post: PostProps }> = ({ post }) => {
+const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   const authorName = post.author ? post.author.name : "Unknown author";
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
@@ -31,4 +31,4 @@ const Pattern: React.FC<{ post: PostProps }> = ({ post }) => {
   );
 };
 
-export default Pattern;
+export default Post;
