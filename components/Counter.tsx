@@ -1,8 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {getSession} from "next-auth/react";
 
+async function addCounter(id: string): Promise<void> {
+    await fetch(`/api/post/${id}`, {
+        method: 'PATCH',
+    });
+}
+
 const Counter = (props) => {
-    const {counterInit} = props;
+    const { counterInit, postID } = props;
     const [counter, setCounter] = useState<number>(counterInit);
 
     const handleReset = () => {
@@ -23,10 +29,8 @@ const Counter = (props) => {
         try {
             console.log(counter);
             const body = { counter };
-            await fetch('/api/counter', {
-                method: 'UPDATE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body),
+            await fetch(`/api/post/${postID}`, {
+                method: 'PATCH',
             });
         } catch (error) {
             console.error(error);
@@ -40,18 +44,18 @@ const Counter = (props) => {
     return (
         <>
         <div className='counter-wrapper'>
-            {/*<button*/}
-            {/*    className='counter-wrapper__button'*/}
-            {/*    onClick={handleRemove}*/}
-            {/*>-</button>*/}
+            <button
+                className='counter-wrapper__button'
+                onClick={handleRemove}
+            >-</button>
             <button
                 className='counter-wrapper__reset'
                 onClick={handleReset}
             >{counter}</button>
-            {/*<button*/}
-            {/*    className='counter-wrapper__button'*/}
-            {/*    onClick={handleAdd}*/}
-            {/*>+</button>*/}
+            <button
+                className='counter-wrapper__button'
+                onClick={handleAdd}
+            >+</button>
         </div>
             <style jsx>
             {`
