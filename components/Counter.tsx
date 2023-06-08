@@ -40,18 +40,18 @@ const Counter = (props) => {
     return (
         <>
         <div className='counter-wrapper'>
-            <button
-                className='counter-wrapper__button'
-                onClick={handleRemove}
-            >-</button>
+            {/*<button*/}
+            {/*    className='counter-wrapper__button'*/}
+            {/*    onClick={handleRemove}*/}
+            {/*>-</button>*/}
             <button
                 className='counter-wrapper__reset'
                 onClick={handleReset}
             >{counter}</button>
-            <button
-                className='counter-wrapper__button'
-                onClick={handleAdd}
-            >+</button>
+            {/*<button*/}
+            {/*    className='counter-wrapper__button'*/}
+            {/*    onClick={handleAdd}*/}
+            {/*>+</button>*/}
         </div>
             <style jsx>
             {`

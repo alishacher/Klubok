@@ -42,7 +42,7 @@ async function addCounter(id: string): Promise<void> {
   await fetch(`/api/post/${id}`, {
     method: 'PATCH',
   });
-  await Router.push(`/api/post/${id}`);
+  // await Router.push(`/api/post/${id}`);
 }
 
 const Post: React.FC<PostProps> = (props) => {
