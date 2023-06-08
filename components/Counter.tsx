@@ -5,7 +5,7 @@ const Counter = (props) => {
     const [counter, setCounter] = useState<number>(counterInit);
 
     const handleReset = () => {
-        setCounter(counterInit);
+        setCounter(0);
     }
 
     const handleAdd = () => {
@@ -24,6 +24,8 @@ const Counter = (props) => {
             const body = { counter };
             await fetch(`/api/post/${postID}`, {
                 method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
             });
         } catch (error) {
             console.error(error);
