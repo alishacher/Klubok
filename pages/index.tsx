@@ -1,7 +1,7 @@
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
+import Pattern, { PostProps } from "../components/Pattern"
 import prisma from "../lib/prisma";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -31,7 +31,7 @@ const Blog: React.FC<Props> = (props) => {
         <main>
           {props.feed.map((post) => (
             <div key={post.id} className="post">
-              <Post post={post} />
+              <Pattern post={post} />
             </div>
           ))}
         </main>

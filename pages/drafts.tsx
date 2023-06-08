@@ -2,7 +2,7 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import { useSession, getSession } from 'next-auth/react';
 import Layout from '../components/Layout';
-import Post, { PostProps } from '../components/Post';
+import Pattern, { PostProps } from '../components/Pattern';
 import prisma from '../lib/prisma';
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
@@ -51,7 +51,7 @@ const Drafts: React.FC<Props> = (props) => {
                 <main>
                     {props.drafts.map((post) => (
                         <div key={post.id} className="post">
-                            <Post post={post} />
+                            <Pattern post={post} />
                         </div>
                     ))}
                 </main>

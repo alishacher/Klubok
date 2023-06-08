@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import ReactMarkdown from 'react-markdown';
 import Router from 'next/router';
 import Layout from '../../components/Layout';
-import { PostProps } from '../../components/Post';
+import { PostProps } from '../../components/Pattern';
 import { useSession } from 'next-auth/react';
 import prisma from '../../lib/prisma';
 import Counter from "../../components/Counter";
@@ -38,6 +38,12 @@ async function deletePost(id: string): Promise<void> {
   await Router.push('/');
 }
 
+async function addCounter(id: string): Promise<void> {
+  await fetch(`/api/post/${id}`, {
+    method: 'PATCH',
+  });
+}
+
 const Post: React.FC<PostProps> = (props) => {
   const { data: session, status } = useSession();
   if (status === 'loading') {
@@ -68,7 +74,8 @@ const Post: React.FC<PostProps> = (props) => {
           }
           {
             userHasValidSession && postBelongsToUser && (
-                <Counter counterInit={props.counter} />
+                <button onClick={() => addCounter(props.id)}> hi</button>
+                // <Counter counterInit={props.counter} />
             )
           }
         </div>

@@ -12,7 +12,7 @@ datasource db {
 
 // schema.prisma
 
-model Post {
+model Pattern {
   id        String  @id @default(cuid())
   title     String
   content   String?
@@ -57,7 +57,7 @@ model User {
   email         String?@unique
   emailVerified DateTime?
   image         String?
-  posts         Post[]
+  posts         Pattern[]
   accounts      Account[]
   sessions      Session[]
 }
