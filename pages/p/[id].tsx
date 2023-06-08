@@ -66,13 +66,8 @@ const Post: React.FC<PostProps> = (props) => {
             )
           }
           {userHasValidSession && postBelongsToUser && (
-                <div>
-                  <Counter counterInit={props.counter} postID={props.id} />
-                  {/*<button onClick={() => addCounter(props.id)}>+</button>*/}
-                  {/*<button onClick={() => addCounter(props.id)}>-</button>*/}
-                  {/*<button onClick={() => addCounter(props.id)}>Restart</button>*/}
-                </div>
-            )
+              <Counter counterInit={props.counter} postID={props.id} />
+          )
           }
         </div>
         <style jsx>{`

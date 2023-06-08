@@ -1,11 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {getSession} from "next-auth/react";
-
-async function addCounter(id: string): Promise<void> {
-    await fetch(`/api/post/${id}`, {
-        method: 'PATCH',
-    });
-}
 
 const Counter = (props) => {
     const { counterInit, postID } = props;
