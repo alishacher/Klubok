@@ -20,7 +20,6 @@ body {
 }
 
 a {
-    color: #0070f3;
     text-decoration: none;
 }
 
@@ -36,12 +35,24 @@ img {
 h2 {
     color: #313131;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
 input,
 textarea {
     font-size: 16px;
 }
 
-button {
-    cursor: pointer;
+input[type='text'],
+textarea {
+    width: 100%;
+
+    padding: 15px;
+
     border: none;
+    border-radius: 8px;
+    background: transparent;
 }

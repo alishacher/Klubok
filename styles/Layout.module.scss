@@ -142,3 +142,8 @@
     }
   }
 }
+
+.draft_input,
+.draft_textarea {
+  border: 3px dashed $color-20;
+}
