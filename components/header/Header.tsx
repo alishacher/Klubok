@@ -90,9 +90,9 @@ const Header: React.FC = () => {
         <div className={styles.header_controls}>
           {session
             ? <>
-              <p>
+              <span>
                 {session.user.name} ({session.user.email})
-              </p>
+              </span>
               <Link href="/create">
                 <button>
                   <a>New draft</a>
