@@ -57,14 +57,16 @@ const Post: React.FC<PostProps> = (props) => {
         <small className={styles.credentials}>By {props?.author?.name || 'Unknown author'}</small>
         <div className={styles.main_text}>
           <ReactMarkdown children={props.content} />
+        </div>
+        <div className={styles.controls}>
           {
             !props.published && userHasValidSession && postBelongsToUser && (
-                <button onClick={() => publishPost(props.id)}>Publish</button>
+              <button onClick={() => publishPost(props.id)}>Publish</button>
             )
           }
           {userHasValidSession && postBelongsToUser && (
-                <button onClick={() => deletePost(props.id)}>Delete</button>
-            )
+            <button onClick={() => deletePost(props.id)}>Delete</button>
+          )
           }
           {/*{userHasValidSession && postBelongsToUser && (*/}
           {/*    <Counter counterInit={props.counter} postID={props.id} />*/}

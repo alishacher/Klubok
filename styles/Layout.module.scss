@@ -45,7 +45,7 @@
   margin-top: 4px;
   padding-bottom: 15px;
 
-  color: $color-20;
+  color: $color-00;
 }
 
 .main_text {
@@ -56,6 +56,32 @@
 
   h1, h2, h3, h4, h5, h6, p {
     white-space: pre;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+    border-radius: 8px;
+    background: $color-00;
+    color: $color-white;
+
+    font-weight: bold;
+
+    transition: 250ms ease-in-out;
+
+    &:hover {
+      background: $color-20;
+    }
   }
 }
 
