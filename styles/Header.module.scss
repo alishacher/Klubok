@@ -73,4 +73,24 @@
       background: $color-30;
     }
   }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+    border-radius: 8px;
+    background: $color-white;
+    color: $color-10;
+
+    font-weight: bold;
+
+    transition: 250ms ease-in-out;
+
+    &:hover {
+      background: $color-30;
+    }
+  }
 }
