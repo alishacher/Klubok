@@ -90,6 +90,15 @@
 
       cursor: pointer;
     }
+
+    &:disabled {
+      background: transparent;
+      color: $color-00;
+
+      font-weight: bold;
+
+      cursor: not-allowed;
+    }
   }
 
   span {
