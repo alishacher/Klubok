@@ -187,8 +187,11 @@
   justify-content: center;
 
   bottom: 10vh;
+  left: 50%;
 
-  width: 100%;
+  padding-bottom: 15px;
+
+  transform: translate(-50%);
 
   .counter_controls {
     display: flex;
@@ -204,6 +207,7 @@
 
       padding: 8px;
 
+      border: 3px solid $color-00;
       border-radius: 8px;
       background: $color-00;
       color: $color-white;
