@@ -210,7 +210,7 @@
 
       min-width: 30px;
       width: max-content;
-      max-width: 3ch;
+      max-width: calc(3ch + 10px);
       height: 30px;
 
       padding: 5px;
