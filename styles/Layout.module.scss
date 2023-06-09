@@ -61,6 +61,8 @@
   border-radius: 15px;
   background: transparent;
 
+  transition: 250ms ease-in-out;
+
   h2 {
     display: flex;
 
@@ -71,5 +73,13 @@
     display: flex;
 
     color: $color-20;
+  }
+
+  &:hover {
+    background: $color-20;
+
+    h2, small {
+      color: $color-white;
+    }
   }
 }
