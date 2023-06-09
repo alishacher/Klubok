@@ -17,9 +17,21 @@
 }
 
 .header_navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
+  height: 100%;
+
+  a {
+    color: $color-white;
+
+    &[data-active='true'] {
+      text-decoration: underline;
+    }
+  }
 }
 
 .header_controls {
-  //[data-active='true']
+
 }
