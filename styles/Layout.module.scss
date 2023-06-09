@@ -91,7 +91,8 @@
   }
 }
 
-.post_wrapper {
+.post_wrapper,
+.draft_wrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
