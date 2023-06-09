@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
 import { getSession } from 'next-auth/react';
+import styles from "@/styles/Layout.module.scss";
 
 const Draft: React.FC = () => {
     const [title, setTitle] = useState('');

@@ -7,6 +7,7 @@ import { PostProps } from '../../components/Post';
 import { useSession } from 'next-auth/react';
 import prisma from '../../lib/prisma';
 import Counter from "../../components/Counter";
+import styles from "@/styles/Layout.module.scss";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
@@ -52,9 +53,9 @@ const Post: React.FC<PostProps> = (props) => {
 
   return (
       <Layout>
-        <div>
-          <h2>{title}</h2>
-          <p>By {props?.author?.name || 'Unknown author'}</p>
+        <h1 className={styles.title}>{title}</h1>
+        <small className={styles.credentials}>By {props?.author?.name || 'Unknown author'}</small>
+        <div className={styles.main_text}>
           <ReactMarkdown children={props.content} />
           {
             !props.published && userHasValidSession && postBelongsToUser && (
@@ -65,32 +66,11 @@ const Post: React.FC<PostProps> = (props) => {
                 <button onClick={() => deletePost(props.id)}>Delete</button>
             )
           }
-          {userHasValidSession && postBelongsToUser && (
-              <Counter counterInit={props.counter} postID={props.id} />
-          )
-          }
+          {/*{userHasValidSession && postBelongsToUser && (*/}
+          {/*    <Counter counterInit={props.counter} postID={props.id} />*/}
+          {/*)*/}
+          {/*}*/}
         </div>
-        <style jsx>{`
-        .page {
-          background: var(--geist-background);
-          padding: 2rem;
-        }
-
-        .actions {
-          margin-top: 2rem;
-        }
-
-        button {
-          background: #ececec;
-          border: 0;
-          border-radius: 0.125rem;
-          padding: 1rem 2rem;
-        }
-
-        button + button {
-          margin-left: 1rem;
-        }
-      `}</style>
       </Layout>
   );
 };
