@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import styles from '@/styles/Layout.module.scss';
 
 const Counter = (props) => {
     const { counterInit, postID } = props;
@@ -37,55 +38,23 @@ const Counter = (props) => {
     }, [counter]);
 
     return (
-        <>
-        <div className='counter-wrapper'>
-            <button
-                className='counter-wrapper__button'
-                onClick={handleRemove}
-            >-</button>
-            <button
-                className='counter-wrapper__reset'
-                onClick={handleReset}
-            >{counter}</button>
-            <button
-                className='counter-wrapper__button'
-                onClick={handleAdd}
-            >+</button>
+        <div className={styles.counter_wrapper}>
+            <div className={styles.counter_controls}>
+                <button
+                    className='counter-wrapper__button'
+                    onClick={handleRemove}
+                    disabled={!counter}
+                >-</button>
+                <button
+                    className='counter-wrapper__reset'
+                    onClick={handleReset}
+                >{counter}</button>
+                <button
+                    className='counter-wrapper__button'
+                    onClick={handleAdd}
+                >+</button>
+            </div>
         </div>
-            <style jsx>
-            {`
-                .counter-wrapper {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                }
-        
-                .counter-wrapper__button {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                    padding: 1rem 2rem;
-                    
-                    background: #ececec;
-                    border: 0;
-                    border-radius: 0.125rem;
-                }
-        
-                counter-wrapper__reset {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                    padding: 1rem 2rem;
-                    
-                    background: transparent;
-                    border: 0;
-                }
-            `}
-            </style>
-        </>
     );
 }
 

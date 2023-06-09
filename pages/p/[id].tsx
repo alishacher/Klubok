@@ -68,11 +68,11 @@ const Post: React.FC<PostProps> = (props) => {
             <button onClick={() => deletePost(props.id)}>Delete</button>
           )
           }
-          {/*{userHasValidSession && postBelongsToUser && (*/}
-          {/*    <Counter counterInit={props.counter} postID={props.id} />*/}
-          {/*)*/}
-          {/*}*/}
         </div>
+        {userHasValidSession && postBelongsToUser && (
+            <Counter counterInit={props.counter} postID={props.id} />
+        )
+        }
       </Layout>
   );
 };

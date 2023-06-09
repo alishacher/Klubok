@@ -178,3 +178,54 @@
     border: 3px dashed $color-00;
   }
 }
+
+.counter_wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 10vh;
+
+  width: 100%;
+
+  .counter_controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    width: max-content;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px;
+
+      border-radius: 8px;
+      background: $color-00;
+      color: $color-white;
+
+      font-weight: bold;
+
+      transition: 250ms ease-in-out;
+
+      &:hover {
+        background: $color-20;
+
+        cursor: pointer;
+      }
+
+      &:disabled {
+        background: transparent;
+        color: $color-00;
+
+        font-weight: bold;
+
+        cursor: not-allowed;
+      }
+    }
+  }
+}
