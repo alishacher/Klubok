@@ -4,6 +4,7 @@ import { useSession, getSession } from 'next-auth/react';
 import Layout from '../components/Layout';
 import Post, { PostProps } from '../components/Post';
 import prisma from '../lib/prisma';
+import styles from "@/styles/Layout.module.scss";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     const session = await getSession({ req });
@@ -35,41 +36,17 @@ type Props = {
 const Drafts: React.FC<Props> = (props) => {
     const { data: session } = useSession();
 
-    if (!session) {
-        return (
-            <Layout>
-                <h1>📰 My Drafts</h1>
-                <div>You need to be authenticated to view this page.</div>
-            </Layout>
-        );
-    }
-
     return (
         <Layout>
-            <div className="page">
-                <h1>📰 My Drafts</h1>
-                <main>
-                    {props.drafts.map((post) => (
-                        <div key={post.id} className="post">
-                            <Post post={post} />
-                        </div>
-                    ))}
-                </main>
-            </div>
-            <style jsx>{`
-        .post {
-          background: var(--geist-background);
-          transition: box-shadow 0.1s ease-in;
-        }
-
-        .post:hover {
-          box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .post + .post {
-          margin-top: 2rem;
-        }
-      `}</style>
+            <h1 className={styles.title}>📰 My Drafts</h1>
+            {session
+              ? <main>
+                  {props.drafts.map((post) => (
+                    <Post post={post} />
+                  ))}
+              </main>
+              : <div>You need to be authenticated to view this page.</div>
+            }
         </Layout>
     );
 };

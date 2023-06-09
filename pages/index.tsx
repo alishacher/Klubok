@@ -28,15 +28,13 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
       <h1 className={styles.title}>✨ Community ideas</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
-        </main>
+      <main>
+        {props.feed.map((post) => (
+          <Post post={post} />
+        ))}
+      </main>
     </Layout>
   )
 }
 
-export default Blog
+export default Blog;
