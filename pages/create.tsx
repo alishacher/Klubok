@@ -71,11 +71,10 @@ const Draft: React.FC = () => {
                         <button
                             disabled={!content || !title}
                             type="submit"
-                            value="Create"
                         >
                             Create
                         </button>
-                        <span>or</span>
+                        {/*<span>or</span>*/}
                         <a className="back" href="#" onClick={() => Router.push('/')}>
                             Cancel
                         </a>
