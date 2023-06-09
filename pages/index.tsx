@@ -28,7 +28,7 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
       <h1 className={styles.title}>✨ Community ideas</h1>
-      <main>
+      <main className={styles.post_wrapper}>
         {props.feed.map((post) => (
           <Post post={post} />
         ))}

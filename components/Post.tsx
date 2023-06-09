@@ -20,9 +20,9 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
     <div
       id={post.id}
       onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}
-      className={styles.post_wrapper}
+      className={styles.post_container}
     >
-      <h2 className={styles.h2}>{post.title}</h2>
+      <h2>{post.title}</h2>
       <small>By {authorName}</small>
     </div>
   );
