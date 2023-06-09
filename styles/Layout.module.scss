@@ -24,3 +24,13 @@
 
   padding: 0 30px;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: $color-black;
+
+  text-decoration: underline $color-10;
+}
