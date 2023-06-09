@@ -143,8 +143,7 @@
   }
 }
 
-input[type=text],
-.draft_input,
+.draft_input[type=text],
 .draft_textarea {
   border: 3px dashed $color-20;
 
