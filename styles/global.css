@@ -60,4 +60,8 @@ textarea {
 input[type='text']:focus-visible,
 textarea:focus-visible {
      outline: none;
- }
+}
+
+textarea {
+    resize: none;
+}

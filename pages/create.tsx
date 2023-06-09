@@ -8,7 +8,7 @@ const Draft: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    const titlePlaceholder = [
+    const titlePlaceholderList = [
         'Sweet Dragon',
         'Lovely flower',
         'Amogus',
@@ -17,7 +17,7 @@ const Draft: React.FC = () => {
         'x0qwe12 ZD4c'
     ];
 
-    const contentPlaceholder = [
+    const contentPlaceholderList = [
         'What a wonderful day!',
         'Look around...',
         'Lets start with the body part...',
@@ -46,6 +46,9 @@ const Draft: React.FC = () => {
         phrasesList[Math.floor(Math.random() * phrasesList.length)]
     );
 
+    const titlePlaceholder = randomPhrase(titlePlaceholderList);
+    const contentPlaceholder = randomPhrase(contentPlaceholderList);
+
     return (
         <Layout>
             <h1 className={styles.title}>✎ New Draft</h1>
@@ -55,15 +58,14 @@ const Draft: React.FC = () => {
                         className={styles.draft_input}
                         autoFocus
                         onChange={(e) => setTitle(e.target.value)}
-                        placeholder={randomPhrase(titlePlaceholder)}
+                        placeholder={titlePlaceholder}
                         type="text"
                         value={title}
                     />
                     <textarea
                         className={styles.draft_textarea}
-                        cols={50}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder={randomPhrase(contentPlaceholder)}
+                        placeholder={contentPlaceholder}
                         rows={8}
                         value={content}
                     />
