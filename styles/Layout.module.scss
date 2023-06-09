@@ -9,6 +9,8 @@
   height: 100%;
 
   background: $color-white;
+
+  overflow-y: hidden;
 }
 
 .layout_container {
@@ -17,7 +19,7 @@
   align-items: flex-start;
 
   width: 100%;
-  min-height: 80%;
+  min-height: 80vh;
   height: 100%;
 
   padding: 0 30px;
