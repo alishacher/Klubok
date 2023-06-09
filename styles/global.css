@@ -63,5 +63,5 @@ textarea:focus-visible {
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
 }
