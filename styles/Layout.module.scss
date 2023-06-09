@@ -7,6 +7,8 @@
   width: 100vw;
   min-height: 100vh;
   height: 100%;
+
+  background: $color-white;
 }
 
 .layout_container {
@@ -15,6 +17,7 @@
   align-items: flex-start;
 
   width: 100%;
+  min-height: 80%;
   height: 100%;
 
   padding: 0 30px;

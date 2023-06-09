@@ -6,10 +6,11 @@
   align-items: flex-start;
 
   width: 100%;
+  min-height: 10%;
   height: 100%;
 
   padding: 15px 30px;
 
-  border-top: 3px dashed $color-00;
+  border-top: 3px dashed $color-white;
   background: $color-10;
 }
