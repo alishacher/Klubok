@@ -40,7 +40,7 @@ const Drafts: React.FC<Props> = (props) => {
         <Layout>
             <h1 className={styles.title}>📰 My Drafts</h1>
             {session
-              ? <main>
+              ? <main className={styles.post_wrapper}>
                   {props.drafts.map((post) => (
                     <Post post={post} />
                   ))}
