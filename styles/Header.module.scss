@@ -60,11 +60,14 @@
 
     border-radius: 8px;
     background: $color-white;
-    color: $color-10;
-
-    font-weight: bold;
 
     transition: 250ms ease-in-out;
+
+    a {
+      color: $color-10;
+
+      font-weight: bold;
+    }
 
     &:hover {
       background: $color-30;
