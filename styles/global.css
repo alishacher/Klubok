@@ -56,3 +56,8 @@ textarea {
     border-radius: 8px;
     background: transparent;
 }
+
+input[type='text']:focus-visible,
+textarea:focus-visible {
+     outline: none;
+ }
