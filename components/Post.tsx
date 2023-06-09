@@ -1,6 +1,6 @@
 import React from "react";
 import Router from "next/router";
-import styles from '@/styles/test.module.scss';
+import styles from '@/styles/Layout.module.scss';
 
 export type PostProps = {
   id: string;
