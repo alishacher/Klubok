@@ -70,7 +70,7 @@
 
   padding: 15px 0 45px;
 
-  button {
+  button, a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +87,22 @@
 
     &:hover {
       background: $color-20;
+
+      cursor: pointer;
     }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+    background: transparent;
+    color: $color-00;
+
+    font-weight: bold;
   }
 }
 

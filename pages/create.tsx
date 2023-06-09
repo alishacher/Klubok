@@ -8,6 +8,22 @@ const Draft: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
+    const titlePlaceholder = [
+        'Sweet Dragon',
+        'Lovely flower',
+        'Amogus',
+        'Lord Voldemort',
+        'Dark Chinchilla',
+        'x0qwe12 ZD4c'
+    ];
+
+    const contentPlaceholder = [
+        'What a wonderful day!',
+        'Look around...',
+        'Lets start with the body part...',
+        'Here is a material needed for the project: ...'
+    ];
+
     const submitData = async (e: React.SyntheticEvent) => {
         e.preventDefault();
         try {
@@ -26,6 +42,10 @@ const Draft: React.FC = () => {
         }
     };
 
+    const randomPhrase = (phrasesList: string[]) => (
+        phrasesList[Math.floor(Math.random() * phrasesList.length)]
+    );
+
     return (
         <Layout>
             <h1 className={styles.title}>✎ New Draft</h1>
@@ -35,7 +55,7 @@ const Draft: React.FC = () => {
                         className={styles.draft_input}
                         autoFocus
                         onChange={(e) => setTitle(e.target.value)}
-                        placeholder="Title"
+                        placeholder={randomPhrase(titlePlaceholder)}
                         type="text"
                         value={title}
                     />
@@ -43,14 +63,23 @@ const Draft: React.FC = () => {
                         className={styles.draft_textarea}
                         cols={50}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Content"
+                        placeholder={randomPhrase(contentPlaceholder)}
                         rows={8}
                         value={content}
                     />
-                    <input disabled={!content || !title} type="submit" value="Create" />
-                    <a className="back" href="#" onClick={() => Router.push('/')}>
-                        or Cancel
-                    </a>
+                    <div className={styles.controls}>
+                        <button
+                            disabled={!content || !title}
+                            type="submit"
+                            value="Create"
+                        >
+                            Create
+                        </button>
+                        <span>or</span>
+                        <a className="back" href="#" onClick={() => Router.push('/')}>
+                            Cancel
+                        </a>
+                    </div>
                 </form>
             </main>
         </Layout>
