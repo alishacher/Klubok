@@ -27,7 +27,8 @@ const Header: React.FC = () => {
           {session
             ? <>
               <span>
-                {session.user.name} ({session.user.email})
+                {session.user.name}
+                  {/*({session.user.email})*/}
               </span>
               <Link href="/create">
                 <button>
