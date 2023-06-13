@@ -25,7 +25,6 @@ const Counter = (props) => {
             const body = { counter: counter };
             await fetch(`/api/counter/${postID}`, {
                 method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             });
         } catch (error) {
