@@ -6,7 +6,7 @@ export default async function handle(req, res) {
         const counter = +req.body.counter;
         const post = await prisma.post.update({
             where: {id: postId},
-            data: {counter: 10},
+            data: {counter: counter},
         });
         res.json(post);
     } else {
