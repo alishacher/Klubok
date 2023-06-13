@@ -2,8 +2,7 @@ import prisma from '../../../lib/prisma';
 
 export default async function handle(req, res) {
     const postId = req.query.id;
-    if (req.method === "PATCH") {
-
+    if (req.method === "UPDATE") {
         const counter = req.data.counter;
         const post = await prisma.post.update({
             where: {id: postId},
