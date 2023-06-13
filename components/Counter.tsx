@@ -21,10 +21,12 @@ const Counter = (props) => {
 
     const updateCounterData = async () => {
         try {
+            console.log(counter);
             const id = postID;
-            const body = { counter: counter };
+            const body = { counter: +counter };
             await fetch(`/api/counter/${id}`, {
                 method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             });
         } catch (error) {
